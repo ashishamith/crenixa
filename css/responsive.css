@@ -1,0 +1,48 @@
+/* =========================================================
+   JOBTIDE – RESPONSIVE
+========================================================= */
+
+/* Laptops / small desktops: sidebar drops below the jobs */
+@media (max-width:1100px){
+  .content-layout{grid-template-columns:1fr}
+  .sidebar{position:static;display:grid;grid-template-columns:1fr 1fr}
+  .sidebar-card{grid-column:1/-1;order:3}
+}
+
+/* Tablets */
+@media (max-width:860px){
+  .header-container{grid-template-columns:1fr auto}
+  .desktop-nav{display:none}
+  .mobile-menu-button{display:flex}
+  .mobile-menu.open{display:flex;flex-direction:column;padding:6px 20px 14px;border-top:1px solid rgba(20,80,180,.08);background:rgba(255,255,255,.97)}
+  .mobile-menu a{padding:12px 0;font-size:15px;font-weight:600;border-bottom:1px solid #eef1f8}
+  .mobile-menu a:last-child{border-bottom:0}
+
+  .hero-container{padding:26px 24px;min-height:0}
+  .hero-content{width:100%}
+  .hero-art{display:none}
+  .hero-description{max-width:560px}
+  .hero-search{width:100%}
+  .category-section{grid-template-columns:1fr}
+  .job-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* Phones */
+@media (max-width:560px){
+  .content-layout,.header-container{width:calc(100% - 28px)}
+  .content-layout{margin-top:12px}
+  .brand-text{font-size:22px}
+  .hero-container{padding:22px 18px;border-radius:18px}
+  .hero-title{font-size:clamp(34px,10.5vw,44px);letter-spacing:-1.8px}
+  .hero-description{font-size:13.5px}
+  .hero-search{height:50px}
+  .hero-search button{padding:0 20px;height:40px}
+  .jobs-heading h2{font-size:24px}
+  .job-filter-buttons{flex-wrap:nowrap;overflow-x:auto;width:100%;padding-bottom:4px;scrollbar-width:none}
+  .job-filter-buttons::-webkit-scrollbar{display:none}
+  .filter-button{white-space:nowrap}
+  .job-grid{grid-template-columns:1fr}
+  .sidebar{grid-template-columns:1fr}
+  .ad-slot{min-height:220px}
+}
+

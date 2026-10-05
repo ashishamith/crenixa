@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Job details, eligibility, job description and application information.">
+<meta name="theme-color" content="#1268ff">
+<title>Job Details — Crenixa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/job.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-container">
+    <button class="back-button" id="backButton" type="button" aria-label="Go back" onclick="history.back()">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <a href="index.html" class="brand" aria-label="JobTide Home">
+      <svg class="brand-mark" viewBox="0 0 48 34" fill="none" aria-hidden="true">
+        <path d="M3 13c6-9 12-9 18 0s12 9 18 0M3 26c6-9 12-9 18 0s12 9 18 0" stroke="url(#jobBrandGradient)" stroke-width="5.5" stroke-linecap="round"/>
+        <defs><linearGradient id="jobBrandGradient" x1="0" x2="1"><stop stop-color="#0a7cff"/><stop offset="1" stop-color="#5b4df0"/></linearGradient></defs>
+      </svg>
+      <span class="brand-text">Cre<span>nixa</span></span>
+    </a>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#jobs">IT Jobs</a>
+    <a href="index.html#jobs">Non-IT Jobs</a>
+    <a href="index.html#jobs">Internships</a>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="job-page">
+
+  <!-- BREADCRUMB -->
+  <div class="job-breadcrumb">
+    <a href="index.html"><span>⌂</span> Home</a>
+    <span class="breadcrumb-arrow">›</span>
+    <a href="index.html#jobs"><span id="breadcrumbCategory">IT Jobs</span></a>
+    <span class="breadcrumb-arrow">›</span>
+    <span id="breadcrumbTitle" class="breadcrumb-current">Job Details</span>
+  </div>
+
+  <div class="job-layout">
+
+    <!-- LEFT CONTENT -->
+    <article class="job-main">
+
+      <!-- JOB HERO -->
+      <section class="job-hero-card">
+        <div class="job-hero-image">
+          <img id="jobThumbnail" src="https://placehold.co/1200x500/eaf3ff/17377a?text=Job" alt="Job">
+          <span id="jobCategory" class="job-hero-category">IT Jobs</span>
+          <span id="jobLastDate" class="job-hero-date"><span>▣</span><span>Last Date</span></span>
+        </div>
+
+        <div class="job-hero-content">
+          <h1 id="jobTitle">Loading job...</h1>
+          <p id="jobCompany" class="job-company-large">Loading...</p>
+
+          <div class="job-hero-meta">
+            <div class="job-info-pill" id="locationPill"><span class="pill-icon location-icon">●</span><span id="jobLocation">—</span></div>
+            <div class="job-info-pill" id="experiencePill"><span class="pill-icon">▣</span><span id="jobExperience">—</span></div>
+            <div class="job-info-pill" id="typePill"><span class="pill-icon">▣</span><span id="jobType">—</span></div>
+            <div class="job-info-pill" id="salaryPill"><span class="pill-icon">$</span><span id="jobSalary">—</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT COMPANY -->
+      <section class="job-section about-section" id="aboutSection">
+        <div class="section-icon blue-icon">▣</div>
+        <div class="section-content">
+          <h2>About the Company</h2>
+          <div id="jobAbout" class="job-text"></div>
+        </div>
+      </section>
+
+      <!-- JOB DETAILS -->
+      <section class="job-section details-section">
+        <div class="section-icon purple-icon">▤</div>
+        <div class="section-content details-content">
+          <h2>Job Details</h2>
+          <div class="details-grid">
+            <div class="details-column">
+              <div class="detail-row"><span class="detail-label">Company</span><strong id="detailCompany">—</strong></div>
+              <div class="detail-row"><span class="detail-label">Role</span><strong id="detailRole">—</strong></div>
+              <div class="detail-row"><span class="detail-label">Location</span><strong id="detailLocation">—</strong></div>
+              <div class="detail-row"><span class="detail-label">Experience</span><strong id="detailExperience">—</strong></div>
+            </div>
+            <div class="details-column">
+              <div class="detail-row"><span class="detail-label">Job Type</span><strong id="detailType">—</strong></div>
+              <div class="detail-row"><span class="detail-label">Salary</span><strong id="detailSalary">—</strong></div>
+              <div class="detail-row"><span class="detail-label">Last Date</span><strong id="detailLastDate">—</strong></div>
+              <div class="detail-row"><span class="detail-label">Category</span><strong id="detailCategory" class="category-detail">—</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- JOB DESCRIPTION -->
+      <section class="job-section description-section" id="jdSection">
+        <div class="section-icon purple-icon">▤</div>
+        <div class="section-content">
+          <h2>Job Description</h2>
+          <div id="jobJD" class="job-list"></div>
+        </div>
+      </section>
+
+      <!-- ELIGIBILITY -->
+      <section class="job-section eligibility-section" id="eligibilitySection">
+        <div class="section-icon blue-icon">◆</div>
+        <div class="section-content">
+          <h2>Eligibility Criteria</h2>
+          <div id="jobEligibility" class="job-list"></div>
+        </div>
+      </section>
+
+      <!-- APPLY -->
+      <section class="apply-section">
+        <div class="apply-content">
+          <div class="apply-icon">↗</div>
+          <div>
+            <h2>Apply for this Position</h2>
+            <p>Click the button below to apply on the official website. You will be redirected to the company's career page.</p>
+          </div>
+        </div>
+
+        <a id="applyButton" class="apply-button" href="#" target="_blank" rel="noopener noreferrer">
+          <span>↗</span><strong>Apply on Official Website</strong><span>→</span>
+        </a>
+
+        <div class="apply-note"><span>ⓘ</span>You will be redirected to the official application page.</div>
+      </section>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="job-sidebar">
+
+      <div class="job-ad">
+        <div class="ad-placeholder-icon">▧</div>
+        <strong>Advertisement</strong><b>(336 × 280)</b><span>This space is reserved for ads</span>
+      </div>
+
+      <div class="job-ad">
+        <div class="ad-placeholder-icon">▧</div>
+        <strong>Advertisement</strong><b>(336 × 280)</b><span>This space is reserved for ads</span>
+      </div>
+
+      <div class="related-card">
+        <div class="related-heading">
+          <h2><span>🔥</span> Related Jobs</h2>
+          <a href="index.html#jobs">View All →</a>
+        </div>
+        <div id="relatedJobs" class="related-list"></div>
+      </div>
+
+    </aside>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="index.html" class="footer-brand">Cre<span>nixa</span></a>
+    <p>© 2026. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/components.js"></script>
+
+<script>
+(function () {
+  "use strict";
+
+  const FALLBACK_IMAGE = "https://placehold.co/1200x500/eaf3ff/17377a?text=Job";
+
+  /* ---------- helpers ---------- */
+  function getThumbnailUrl(value) {
+    if (!value) return FALLBACK_IMAGE;
+    const url = String(value).trim();
+    const m = url.match(/drive\.google\.com\/file\/d\/([^/]+)/) ||
+              url.match(/drive\.google\.com\/open\?id=([^&]+)/) ||
+              url.match(/drive\.google\.com\/uc\?.*id=([^&]+)/);
+    return m ? `https://drive.google.com/thumbnail?id=${m[1]}&sz=w1200` : url;
+  }
+
+  function escapeHTML(value) {
+    if (value === null || value === undefined) return "";
+    return String(value)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+  }
+
+  function getApiUrl() {
+    if (typeof CONFIG !== "undefined" && CONFIG.API_URL) return CONFIG.API_URL;
+    if (typeof API_URL !== "undefined") return API_URL;
+    if (typeof GOOGLE_SHEETS_API !== "undefined") return GOOGLE_SHEETS_API;
+    return "";
+  }
+
+  async function getJobs() {
+    if (typeof fetchJobs === "function") return await fetchJobs();
+
+    const apiUrl = getApiUrl();
+    if (!apiUrl) throw new Error("API URL not found");
+
+    const response = await fetch(apiUrl);
+    if (!response.ok) throw new Error("Unable to load jobs");
+
+    const data = await response.json();
+    if (Array.isArray(data)) return data;
+    if (Array.isArray(data.data)) return data.data;
+    if (Array.isArray(data.jobs)) return data.jobs;
+    return [];
+  }
+
+  /* 2026-09-28T18:30:00.000Z  →  29 Sep 2026  (India time) */
+  function formatDate(value) {
+    const text = String(value || "").trim();
+    if (!/^\d{4}-\d{2}-\d{2}/.test(text)) return text;   // normal text stays as it is
+
+    const date = new Date(text);
+    if (isNaN(date)) return text;
+
+    const ist = new Date(date.getTime() + 5.5 * 60 * 60 * 1000);
+    const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    return `${ist.getUTCDate()} ${months[ist.getUTCMonth()]} ${ist.getUTCFullYear()}`;
+  }
+
+  /* splits a long About text into short, easy-to-read paragraphs */
+  function renderAbout(el, text) {
+    const raw = String(text).trim();
+    let paragraphs = raw.split(/\n+/).map(p => p.trim()).filter(Boolean);
+
+    if (paragraphs.length === 1 && raw.length > 260) {
+      const sentences = raw.match(/[^.!?]+(?:[.!?]+|$)\s*/g) || [raw];
+      paragraphs = [];
+      for (let i = 0; i < sentences.length; i += 2) {
+        paragraphs.push(sentences.slice(i, i + 2).join("").trim());
+      }
+    }
+
+    el.innerHTML = paragraphs.map(p => `<p>${escapeHTML(p)}</p>`).join("");
+  }
+
+  function setText(id, value) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value || "";
+  }
+
+  function setOptional(id, value) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (value === null || value === undefined || String(value).trim() === "") {
+      const pill = el.closest(".job-info-pill");
+      if (pill) pill.style.display = "none";
+      return;
+    }
+    el.textContent = value;
+  }
+
+  function renderList(id, value) {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    if (!value || String(value).trim() === "") {
+      const section = el.closest(".job-section");
+      if (section) section.style.display = "none";
+      return;
+    }
+
+    el.innerHTML = String(value)
+      .split("|").map(item => item.trim()).filter(Boolean)
+      .map(item => `<div class="job-list-item"><span class="check-icon">✓</span><span>${escapeHTML(item)}</span></div>`)
+      .join("");
+  }
+
+  /* ---------- find the job from the URL ---------- */
+  const params = new URLSearchParams(window.location.search);
+  const requestedIndex = params.get("job");
+  const requestedTitle = params.get("title");
+  const requestedCompany = params.get("company");
+  const norm = v => String(v || "").trim().toLowerCase();
+
+  function findJob(jobs) {
+    if (!jobs.length) return null;
+
+    if (requestedIndex !== null) {
+      const index = Number(requestedIndex);
+      if (Number.isInteger(index) && index >= 0 && index < jobs.length) return jobs[index];
+    }
+
+    if (requestedTitle && requestedCompany) {
+      const exact = jobs.find(j => norm(j.Title) === norm(requestedTitle) && norm(j.Company) === norm(requestedCompany));
+      if (exact) return exact;
+    }
+
+    if (requestedTitle) {
+      const match = jobs.find(j => norm(j.Title) === norm(requestedTitle));
+      if (match) return match;
+    }
+
+    return jobs[0];
+  }
+
+  /* ---------- related jobs ---------- */
+  function renderRelatedJobs(jobs, currentJob) {
+    const container = document.getElementById("relatedJobs");
+    if (!container) return;
+
+    const category = norm(currentJob.Category);
+    let related = jobs.filter(j => j !== currentJob && norm(j.Category) === category);
+
+    if (related.length < 4) {
+      related = related.concat(jobs.filter(j => j !== currentJob && !related.includes(j)));
+    }
+    related = related.slice(0, 4);
+
+    if (!related.length) {
+      container.innerHTML = `<p class="no-related">No related jobs available.</p>`;
+      return;
+    }
+
+    container.innerHTML = related.map(job => {
+      const image = getThumbnailUrl(job["Thumbnail URL"]);
+      const title = escapeHTML(job.Title);
+      const company = escapeHTML(job.Company);
+      const experience = escapeHTML(job.Experience);
+      const href = `job.html?title=${encodeURIComponent(job.Title || "")}&company=${encodeURIComponent(job.Company || "")}`;
+
+      return `
+        <a class="related-job" href="${href}">
+          <img src="${escapeHTML(image)}" alt="" loading="lazy" onerror="this.src='${FALLBACK_IMAGE}'">
+          <div class="related-job-info">
+            <h3>${title}</h3>
+            <div class="related-meta">
+              ${company ? `<span>${company}</span>` : ""}
+              ${experience ? `<span>${experience}</span>` : ""}
+            </div>
+          </div>
+          <span class="related-arrow">›</span>
+        </a>`;
+    }).join("");
+  }
+
+  /* ---------- render job ---------- */
+  function renderJob(job, jobs) {
+    if (!job) {
+      document.title = "Job Not Found — JobTide";
+      setText("jobTitle", "Job Not Found");
+      return;
+    }
+
+    const title = job.Title || "Job Opportunity";
+    const company = job.Company || "";
+    const category = job.Category || "";
+    const location = job.Location || "";
+    const experience = job.Experience || "";
+    const type = job["Job Type"] || "";
+    const salary = job.Salary || "";
+    const lastDate = formatDate(job["Last Date"]);
+
+    document.title = `${title} — JobTide`;
+
+    setText("breadcrumbCategory", category);
+    setText("breadcrumbTitle", title);
+    setText("jobTitle", title);
+    setText("jobCompany", company);
+    setText("jobCategory", category);
+
+    const image = document.getElementById("jobThumbnail");
+    if (image) {
+      image.src = getThumbnailUrl(job["Thumbnail URL"]);
+      image.alt = `${title} - ${company}`;
+      image.onerror = function () { this.src = FALLBACK_IMAGE; };
+    }
+
+    const dateEl = document.getElementById("jobLastDate");
+    if (dateEl) {
+      if (lastDate) dateEl.innerHTML = `<span>▣</span><span>${escapeHTML(lastDate)}</span>`;
+      else dateEl.style.display = "none";
+    }
+
+    setOptional("jobLocation", location);
+    setOptional("jobExperience", experience);
+    setOptional("jobType", type);
+    setOptional("jobSalary", salary);
+
+    const about = document.getElementById("jobAbout");
+    if (about) {
+      if (job.About) renderAbout(about, job.About);
+      else document.getElementById("aboutSection").style.display = "none";
+    }
+
+    setText("detailCompany", company);
+    setText("detailRole", title);
+    setText("detailLocation", location);
+    setText("detailExperience", experience);
+    setText("detailType", type);
+    setText("detailSalary", salary);
+    setText("detailLastDate", lastDate);
+    setText("detailCategory", category);
+
+    renderList("jobJD", job.JD);
+    renderList("jobEligibility", job.Eligibility);
+
+    const applyButton = document.getElementById("applyButton");
+    if (applyButton) {
+      if (job["Apply URL"]) applyButton.href = job["Apply URL"];
+      else applyButton.style.display = "none";
+    }
+
+    renderRelatedJobs(jobs, job);
+  }
+
+  /* ---------- mobile menu ---------- */
+  const menuButton = document.getElementById("mobileMenuButton");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener("click", function () {
+      const isOpen = mobileMenu.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        mobileMenu.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  /* ---------- load ---------- */
+  async function init() {
+    try {
+      const jobs = await getJobs();
+      renderJob(findJob(jobs), jobs);
+    } catch (error) {
+      console.error("Job page error:", error);
+      setText("jobTitle", "Unable to load job");
+      setText("jobCompany", "Please try again later.");
+    }
+  }
+
+  init();
+})();
+</script>
+
+</body>
+</html>

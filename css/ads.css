@@ -1,0 +1,49 @@
+/* =========================================================
+   JOBTIDE ADS
+========================================================= */
+
+.ad-slot {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    margin: 20px 0;
+
+    overflow: hidden;
+}
+
+/* Desktop sidebar */
+.ad-slot.sidebar-ad {
+    width: 336px;
+    min-height: 280px;
+
+    margin: 0 auto 20px;
+}
+
+/* Article ads */
+.ad-slot.article-ad {
+    min-height: 100px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .ad-slot {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 18px auto;
+
+        overflow: hidden;
+    }
+
+    .ad-slot.sidebar-ad {
+        width: 100%;
+        max-width: 336px;
+
+        min-height: 280px;
+    }
+}
